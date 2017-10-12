@@ -1,0 +1,95 @@
+<h1><%= @list.title %></h1>
+<%= bootstrap_form_for([@list, @item]) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.submit "Create a Item!" %>
+<% end %>
+<div class="s-tier">
+  <h1>S-tier</h1>
+  <% if @items[:s].length > 0 %>
+    <ul>
+      <% @items[:s].each do |item| %>
+        <li><%= item.title %></li>
+        <%= bootstrap_form_for(@vote) do |f| %>
+          <%= f.number_field :amount, :min => 0, :max => 10 %>
+          <%= f.hidden_field :item_id, :value => item.id %>
+          <%= f.submit "Submit Vote!" %>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+<div class="a-tier">
+  <h1>A-tier</h1>
+  <% if @items[:a].length > 0 %>
+    <ul>
+      <% @items[:a].each do |item| %>
+        <li><%= item.title %></li>
+        <%= bootstrap_form_for(@vote) do |f| %>
+          <%= f.number_field :amount, :min => 0, :max => 10 %>
+          <%= f.hidden_field :item_id, :value => item.id %>
+          <%= f.submit "Submit Vote!" %>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+<div class="b-tier">
+  <h1>B-tier</h1>
+  <% if @items[:b].length > 0 %>
+    <ul>
+      <% @items[:b].each do |item| %>
+        <li><%= item.title %></li>
+        <%= bootstrap_form_for(@vote) do |f| %>
+          <%= f.number_field :amount, :min => 0, :max => 10 %>
+          <%= f.hidden_field :item_id, :value => item.id %>
+          <%= f.submit "Submit Vote!" %>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+<div class="c-tier">
+  <h1>C-tier</h1>
+  <% if @items[:c].length > 0 %>
+    <ul>
+      <% @items[:c].each do |item| %>
+        <li><%= item.title %></li>
+        <%= bootstrap_form_for(@vote) do |f| %>
+          <%= f.number_field :amount, :min => 0, :max => 10 %>
+          <%= f.hidden_field :item_id, :value => item.id %>
+          <%= f.submit "Submit Vote!" %>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+<div class="d-tier">
+  <h1>D-tier</h1>
+  <% if @items[:d].length > 0 %>
+    <ul>
+      <% @items[:d].each do |item| %>
+        <li><%= item.title %></li>
+        <%= bootstrap_form_for(@vote) do |f| %>
+          <%= f.number_field :amount, :min => 0, :max => 10 %>
+          <%= f.hidden_field :item_id, :value => item.id %>
+          <%= f.submit "Submit Vote!" %>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+<div class="f-tier">
+  <h1>F-tier</h1>
+  <% if @items[:f].length > 0 %>
+    <ul>
+      <% @items[:f].each do |item| %>
+        <li><%= item.title %></li>
+        <%= bootstrap_form_for(@vote) do |f| %>
+          <%= f.number_field :amount, :min => 0, :max => 10 %>
+          <%= f.hidden_field :item_id, :value => item.id %>
+          <%= f.submit "Submit Vote!" %>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

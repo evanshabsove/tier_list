@@ -1,0 +1,19 @@
+<ul>
+  <li>10 = S-Tier</li>
+  <li>9 = A-Tier</li>
+  <li>8-7 = B-Tier</li>
+  <li>6-5 = C-Tier</li>
+  <li>4-3 = D-Tier</li>
+  <li>3-0 = F-Tier</li>
+</ul>
+<%= bootstrap_form_for(@list) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.submit "Create Tier List!" %>
+<% end %>
+<% if @lists.length > 0 %>
+  <ul>
+    <% @lists.each do |list| %>
+      <li><%= link_to list.title, list_path(list)  %></li>
+    <% end %>
+  </ul>
+<% end %>
