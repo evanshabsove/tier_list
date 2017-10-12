@@ -1,19 +1,29 @@
-<ul>
-  <li>10 = S-Tier</li>
-  <li>9 = A-Tier</li>
-  <li>8-7 = B-Tier</li>
-  <li>6-5 = C-Tier</li>
-  <li>4-3 = D-Tier</li>
-  <li>3-0 = F-Tier</li>
-</ul>
-<%= bootstrap_form_for(@list) do |f| %>
-  <%= f.text_field :title %>
-  <%= f.submit "Create Tier List!" %>
-<% end %>
-<% if @lists.length > 0 %>
-  <ul>
-    <% @lists.each do |list| %>
-      <li><%= link_to list.title, list_path(list)  %></li>
+</p><div class="container">
+  <div class="row title-row">
+    <div class="col-sm-5 well">
+      <h3>Tier list ranking</h3>
+      <p>10 = S-Tier</p>
+      <p>9 = A-Tier</p>
+      <p>8-7 = B-Tier</p>
+      <p>6-5 = C-Tier</p>
+      <p>4-3 = D-Tier</p>
+      <p>3-0 = F-Tier</p>
+    </div>
+    <div class="col-sm-6 col-sm-offset-1 well">
+      <h3>Create a new tier list</h3>
+      <%= bootstrap_form_for(@list) do |f| %>
+        <%= f.text_field :title %>
+        <%= f.submit "Create Tier List!" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <% if @lists.length > 0 %>
+      <% @lists.each do |list| %>
+        <div class="col-sm-12 list-col">
+          <h1><%= link_to list.title, list_path(list)  %></h1>
+        </div>
+      <% end %>
     <% end %>
-  </ul>
-<% end %>
+  </div>
+</div>

@@ -12,7 +12,7 @@ class Item < ApplicationRecord
     if votes.length == 0
       return 0
     else
-      return total/votes.length
+      return (total.to_f/votes.length).round
     end
   end
 end
