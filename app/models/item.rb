@@ -7,7 +7,9 @@ class Item < ApplicationRecord
     item = self
     votes = item.votes
     votes.each do |vote|
-      total += vote.amount
+      if vote.amount != nil
+        total += vote.amount
+      end
     end
     if votes.length == 0
       return 0
