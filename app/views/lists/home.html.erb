@@ -1,19 +1,10 @@
 </p><div class="container">
   <div class="row title-row">
-    <div class="col-sm-5 well">
-      <h3>Tier list ranking</h3>
-      <p>10 = S-Tier</p>
-      <p>9 = A-Tier</p>
-      <p>8-7 = B-Tier</p>
-      <p>6-5 = C-Tier</p>
-      <p>4-3 = D-Tier</p>
-      <p>3-0 = F-Tier</p>
-    </div>
-    <div class="col-sm-6 col-sm-offset-1 well">
-      <h3>Create a new tier list</h3>
+    <div class="col-sm-12 well">
+      <h3>Create a new ranking list</h3>
       <%= bootstrap_form_for(@list) do |f| %>
         <%= f.text_field :title %>
-        <%= f.submit "Create Tier List!" %>
+        <%= f.submit "Create New List!" %>
       <% end %>
     </div>
   </div>
